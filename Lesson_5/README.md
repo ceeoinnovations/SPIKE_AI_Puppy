@@ -65,7 +65,7 @@
 
 # Setting up Teachable Machine on PC
 
-Download the TeachablePose.html file from <i> On PC </i> folder. 
+Download the TeachablePose.html file. 
 
 
 
