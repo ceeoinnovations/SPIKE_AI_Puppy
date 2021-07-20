@@ -213,12 +213,10 @@ Download the main.py and secrets.py files.
 <details>
   <summary>Using the library</summary>
    
-<h3> 0. Download secrets.py to your SPIKE Prime.</h3>
-
 
 <h3> 1. Edit the secrets.py file</h3>
 
-Edit the secrets.py file by replacing BaseID and API Key from your account. Refer to the sections <i> Finding the BaseID </i> and <i> Creating API Key </i> above on how to do it.
+Edit the secrets.py file by replacing BaseID and API Key from your account. Refer to the sections <i> Finding the BaseID </i> and <i> Creating API Key </i> above on how to do it. Once completed, save this file to your SPIKE.
 
 
 <h3> 2. Edit the main.py file</h3>
