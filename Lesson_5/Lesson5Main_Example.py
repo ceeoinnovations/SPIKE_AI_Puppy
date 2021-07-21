@@ -11,7 +11,7 @@ table = 'Table1'
 field = 'Name'
 ####################################
 
-# The purple code below runs on the ESP!
+# The code below runs on the ESP!
 commands = '''
 \x05
 import ESPClient, ujson
