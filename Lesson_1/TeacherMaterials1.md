@@ -143,7 +143,7 @@ Be sure to have students check the ports of each sensor and motor, and update th
 
 The example code leads the user through a training session and a testing session. There are two different ultrasonic sensor positions being trained, with Command A corresponding to sitting and Command B corresponding to standing. Note that the code has been written such that it should begin the lesson in standing mode, and that if it receives a command it has already executed, it will not repeat the same command.
 
-[Lesson1Main_Example.py}(https://github.com/ceeoinnovations/SPIKE_AI_Puppy/blob/main/Lesson_1/Lesson1Main_Example.py)
+[Lesson1Main_Example.py](https://github.com/ceeoinnovations/SPIKE_AI_Puppy/blob/main/Lesson_1/Lesson1Main_Example.py)
 
 
 
