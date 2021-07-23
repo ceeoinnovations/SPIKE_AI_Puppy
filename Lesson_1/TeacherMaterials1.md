@@ -62,12 +62,9 @@ English Language Arts Extension:
 * CCSS.ELA-LITERACY.W.9-10.2 Write informative/explanatory texts to examine and convey complex ideas, concepts, and information clearly and accurately through the effective selection, organization, and analysis of content.
 
 
-
-
 ## Student Material
 
 [Student Worksheet Guide](https://github.com/ceeoinnovations/SPIKE_AI_Puppy/blob/main/Lesson_1/StudentWorksheet1.md)
-
 
 
 1. ### Prepare
@@ -114,8 +111,6 @@ English Language Arts Extension:
 * You can use the assessment ideas provided to simplify the process.
 
 
-
-
 ## Ignite a Discussion
 
 Machine Learning is an incredibly complex subject, but some of the basics can be easily grasped. In the case of **1-dimensional minimum-distance-to-mean clustering**, data can be easily visualized on a 1-dimensional number line, allowing students to see the clusters of data. In this case, you could create a number line representing the distance the ultrasonic sensor is sensing, and visualize how similar distance readings would end up being clustered together in the same general area of the number line. When a new random point is added to the line, students can judge for themselves which cluster it should belong to, but what is their reasoning? Talk about **nearest centroid classification**, and how you can determine which cluster the data point most likely belongs to by determining which cluster’s center is closer to the new data point. 
@@ -132,6 +127,7 @@ Have students formulate initial solutions and how they will build for them and c
 
 When designing their puppies, have students consider how they will utilize the motors to have their pet sit and stand, and maintain stability throughout the process.  
 
+
 ## Coding Tips
 
 Depending on your students’ coding experience, you may wish to demonstrate how to use the specialized classes and functions being provided in Lesson1Training.py by showing them the Lesson1Main_Example.py file. Depending on your specific learning objectives, you may wish to have students explore Lesson1Training.py on their own to determine how it functions, or you may wish to walk them through it step by step.
@@ -146,19 +142,15 @@ The example code leads the user through a training session and a testing session
 [Lesson1Main_Example.py](https://github.com/ceeoinnovations/SPIKE_AI_Puppy/blob/main/Lesson_1/Lesson1Main_Example.py)
 
 
-
 ## Differentiation
 
 Simplify this lesson by…
 * Providing all the example code up front and having students only modify code that already functions.
 * Reducing the complexity of the build by having a pet that waves an arm back and forth, or does some other simple function.
 
-
 Take this lesson to the next level by…
 * Encouraging students to try training for 3 or more different commands at once.
 * Not providing the Lesson1Main_Example.py file and having students design their own code that utilizes the Lesson1Training.py file.
-
-
 
 
 ## Assessment Opportunities
@@ -180,8 +172,6 @@ Have students reflect on their device function description and goals from the br
 
 **Peer Feedback:** 
 Students tend to struggle with giving and receiving feedback and constructive criticism, as it is not usually modeled or directly taught in classes. Educators are encouraged to actively teach good feedback skills when students are sharing their work both within their team and among the class at large. The aspects of good feedback are that it is: direct, useful, and respectful. Direct feedback addresses specific aspects of a project instead of general observations like “It doesn’t work” or “It gets the job done”. Useful feedback is helpful to the person receiving it because it addresses issues that are able to be fixed instead of pointing out things that cannot be reasonably addressed within the scope of the class. Respectful feedback avoids personal criticism or unnecessary harshness.
-
-
 
 
 ## Extensions
