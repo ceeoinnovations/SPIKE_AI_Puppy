@@ -107,8 +107,6 @@ English Language Arts Extension
 * You can use the assessment ideas provided to simplify the process.
 
 
-
-
 ## Ignite a Discussion
 
 TeachableMachine uses machine learning to train an algorithm to learn and recognize different kinds of visual data. Once visual data can be categorized, new visual input can be analyzed and used to activate various programs depending on which category the image is determined to belong to. Machine learning is similar to human learning in that practice makes perfect -- the more you train your model, the more accurately it will work! 
@@ -125,80 +123,27 @@ Have students formulate initial solutions and how they will build for it and cod
 
 ## Building Tips
 
-[Link to EV3 Core Set Puppy Model](https://le-www-live-s.legocdn.com/sc/media/lessons/mindstorms-ev3/building-instructions/ev3-model-core-set-puppy-7a316ae71b8ecdcd72ad4c4bcd15845d.pdf "Link to EV3 Core Set Puppy Model") 
-
-For students building their own models, make sure they design their puppies to be able to perform at least two different actions, triggered by their commands. 
+When students build their own models, make sure they design their puppies to be able to perform at least two different actions, triggered by their commands. 
 
 
 ## Coding Tips
 
-Students will first use visual commands to train image models on TeachableMachine and use its powerful machine learning algorithm to convert those image commands to text representations of various classes such as “Stop”, “Sit”, or “Come”. The class text will be pushed to Airtable and stored. The EV3 can then retrieve the class text from Airtable using an API.
+Students will first use visual commands to train image models on TeachableMachine and use its powerful machine learning algorithm to convert those image commands to text representations of various classes such as “Stop”, “Sit”, or “Come”. The class text will be pushed to Airtable and stored. The SPIKE can then retrieve the class text from Airtable using an API.
 
 This multi-stage flow of information can be overwhelming for some students, which is why much of the work has been already done behind the scenes in the airtable.py file and “On PC” html code. Depending on the experience level of your students, you may wish to teach by presenting the code up front and guiding students through an exploration of it to deduce its function. For other students, it may be enough to simply use the supporting files as a “black box”. 
 
-Be sure to have students check port identities in their code, especially if students build their own designs. A common source of frustration can be mismatched sensors and motors in the wrong port.
-
+Be sure to have students check port identities in their code. A common source of frustration can be mismatched sensors and motors in the wrong port.   
 
 
 ## Main Program & Possible Solutions
 
-This example code uses a training session from TeachableMachine to give visual commands to a single motor. A TeachableMachine training model was already completed, using two classes named On and Off.
+This example code uses a training session from TeachableMachine to give visual commands of sit or stand to the puppy. 
 
-**Note:** When filling in your infromation for voice_command ==, spelling and case must be an exact match with what is being printed in the AirTable cells. 
-For ease of use, only open the "On EV3" folder in your VSCode. Open the "On PC" folder in your computer's file browser. 
-
-```
-#!/usr/bin/env pybricks-micropython
-"""
-Artificial Intelligence Lesson 5 Example Code
-Prototype by Tufts Center for Engineering Education and Outreach
-June 2020
-This code is intended for use on a LEGO EV3 running MicroPython v2.0.
-"""
-from pybricks.hubs import EV3Brick
-# from pybricks import ev3brick as brick
-from pybricks.ev3devices import (Motor, TouchSensor, ColorSensor,
-                                 InfraredSensor, UltrasonicSensor, GyroSensor)
-from pybricks.parameters import (Port, Stop, Direction, Button, Color,
-                                 SoundFile, ImageFile, Align)
-from pybricks.tools import print, wait, StopWatch
-from pybricks.robotics import DriveBase
-import secrets
-import airtable
-
-# Write your program here
-ev3 = EV3Brick()
-ev3.speaker.beep()
-motorA = Motor(Port.A)
-
-while True:
-
-    pose_command = airtable.Get_AT("Table 1", "Name")
-    print(pose_command)
-    if pose_command == "On":
-        motorA.run(70)
-    elif pose_command == "Off":
-        motorA.stop()
-    else:
-        pass
-
-    wait(100)
-
-
-'''
-By calling Get_AT, you will receive the name of the most likely pose, after you've trained your model.
-Use conditional statements (think "if the pose is _____, then do ____") to move your dog.
-Don't forget to put your APIKey and your Tag!
-NOTE: The exact name (spelling and capitalization) of your classes must be inserted where the XXXXXX is
-'''
-© 2020 GitHub, Inc.
-```
+[Lesson5Main_Example.py](https://github.com/ceeoinnovations/SPIKE_AI_Puppy/blob/main/Lesson_5/Lesson5Main_Example.py)
 
 **On PC**
 
-Run the TeachablePose.html file on Google Chrome. Enter your Airtable ApiKey, BaseID, and url from TeachableMachines and click submit. When you are ready press Start. You will have to allow Chrome to access your microphone. Allow this to continue running in the background while you control the EV3 via VSCode. If you have multiple tabs open in Chrome, this tab must be on top or else it will not respond. Close the Chrome browser or refresh when you are done.
-
-Find the full instructions and code in the [README.md file](https://github.com/tuftsceeo/EV3_AI_Demos/blob/master/Lesson_5/README.md "README.md file")
+Run the TeachablePose.html file on Google Chrome. Enter your Airtable ApiKey, BaseID, and url from TeachableMachines and click submit. When you are ready press Start. You will have to allow Chrome to access your camera. Allow this to continue running in the background while you control the SPIKE via your IDE. If you have multiple tabs open in Chrome, this tab must be on top or else it will not respond. Close the Chrome browser or refresh when you are done.
 
 
 ## Differentiation
@@ -207,25 +152,22 @@ Simplify this lesson by…
 * Providing all the example code up front and having students only modify code that already functions.
 * Reducing the complexity of reactions the puppy could produce
 
-
 Take this lesson to the next level by…
 * Having students add additional commands and puppy reactions
-* Mount a mobile webcam to the puppy itself and try running the entire code on the EV3, bypassing the need for Google Chrome as an intermediary.
-
-
+* Mount a mobile webcam to the puppy itself and try running the entire code on the SPIKE, bypassing the need for Google Chrome as an intermediary.
 
 
 ## Assessment Opportunities
 
 **Teacher Assessment:** 
 Create a scale that matches your needs, for example:
-Partially accomplished
-Fully accomplished
-Overachieved
+* Partially accomplished
+* Fully accomplished
+* Overachieved
 
 Use the following success criteria to evaluate your students' progress:
 * Students can design and build a puppy capable of displaying various reactions in response to specific visual commands
-* Students successfully link their TeachableMachine training data to their EV3 with the appropriate code
+* Students successfully link their TeachableMachine training data to their SPIKE with the appropriate code
 * Students successfully execute two different visual commands that activate their respective puppy actions
 * Students can self-reflect honestly and accurately on their work, both before, during, and after completion of the project. 
 
@@ -234,8 +176,6 @@ Have students reflect on their device function description and goals from the br
 
 **Peer Feedback:** 
 Students tend to struggle with giving and receiving feedback and constructive criticism, as it is not usually modeled or directly taught in classes. Educators are encouraged to actively teach good feedback skills when students are sharing their work both within their team and among the class at large. The aspects of good feedback are that it is: direct, useful, and respectful. Direct feedback addresses specific aspects of a project instead of general observations like “It doesn’t work” or “It gets the job done”. Useful feedback is helpful to the person receiving it because it addresses issues that are able to be fixed instead of pointing out things that cannot be reasonably addressed within the scope of the class. Respectful feedback avoids personal criticism or unnecessary harshness.
-
-
 
 
 ## Extensions
