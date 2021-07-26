@@ -1,6 +1,6 @@
 # Artificial Intelligence & Machine Learning: Training Your Robot Puppy
 
-## Learning Promise
+### Learning Promise
 
 In this unit, your students will continue to develop their coding and engineering skills by designing their own interactive projects that utilize the fundamentals of artificial intelligence and machine learning. Students will design machine learning training sets, collect and evaluate data, anticipate machine reactions, and develop multi-step systems that successfully interact with users. By developing systems that can be quantitatively and qualitatively tested for functionality, students will work across a variety of academic disciplines to meet specific design criteria and constraints. Building upon basic coding skills, students will be introduced to specially developed classes and functions, giving them the opportunity to recognize patterns while exploring existing code. Students will also work with APIs to send and receive data, and develop their own commands and functions in MicroPython. 
 
