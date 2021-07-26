@@ -355,6 +355,7 @@ Be sure to have students check port identities in their code. A common source of
 ## Main Program & Possible Solutions
 
 **K-Nearest Neighbor Method**
+
 This example code walks a user through training the puppy with a set of pets and a set of strokes (supervised learning) before having the puppy react. 
 
 [Lesson2Main_Example](https://github.com/ceeoinnovations/SPIKE_AI_Puppy/blob/main/Lesson_2/Lesson2Main_Example.py)
@@ -749,11 +750,13 @@ Be sure to have students check port identities in their code. A common source of
 ## Main Program & Possible Solutions
 
 **Method 1: Linear Regression Modeling**
+
 This example code initializes the ultrasonic sensor and motors, and runs through training sessions and testing predictions for a target distance. Students will follow the prompts printed in the REPL. 
 
 [Lesson4Main-LinReg_Example.py](https://github.com/ceeoinnovations/SPIKE_AI_Puppy/blob/main/Lesson_4/Lesson4Main-LinReg_Example.py)
 
 **Method 2: Reinforcement Learning**
+
 This example code initializes the ultrasonic sensor and motors, and runs through training sessions and testing predictions for a target distance. Note that you must declare the number of trials in your code before running the program. Students will follow the prompts printed in the REPL.
 
 [Lesson4Main-ReLearn_Example.py](https://github.com/ceeoinnovations/SPIKE_AI_Puppy/blob/main/Lesson_4/Lesson4Main-ReLearn_Example.py)
@@ -957,6 +960,7 @@ This example code uses a training session from TeachableMachine to give visual c
 [Lesson5Main_Example.py](https://github.com/ceeoinnovations/SPIKE_AI_Puppy/blob/main/Lesson_5/Lesson5Main_Example.py)
 
 **On PC:**
+
 Run the TeachablePose.html file on Google Chrome. Enter your Airtable ApiKey, BaseID, and url from TeachableMachines and click submit. When you are ready press Start. You will have to allow Chrome to access your camera. Allow this to continue running in the background while you control the SPIKE via your IDE. If you have multiple tabs open in Chrome, this tab must be on top or else it will not respond. Close the Chrome browser or refresh when you are done.
 
 
