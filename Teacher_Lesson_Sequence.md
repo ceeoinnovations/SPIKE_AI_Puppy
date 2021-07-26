@@ -960,7 +960,6 @@ This example code uses a training session from TeachableMachine to give visual c
 [Lesson5Main_Example.py](https://github.com/ceeoinnovations/SPIKE_AI_Puppy/blob/main/Lesson_5/Lesson5Main_Example.py)
 
 **On PC:**
-
 Run the TeachablePose.html file on Google Chrome. Enter your Airtable ApiKey, BaseID, and url from TeachableMachines and click submit. When you are ready press Start. You will have to allow Chrome to access your camera. Allow this to continue running in the background while you control the SPIKE via your IDE. If you have multiple tabs open in Chrome, this tab must be on top or else it will not respond. Close the Chrome browser or refresh when you are done.
 
 
