@@ -1,32 +1,33 @@
-# Last modified: July 7th '21
+# Last modified: January 1, 2024
 # Example for Using PuppyTraining Module
-
-import hub, utime
 
 ## Uncomment the following line if you have loaded the code onto the SPIKE ##
 #import Lesson1Training
 
 ##### REPLACE with your own intializaion of motors- can be paired, unpaired, depends on your puppy!!!! #####
-legR = hub.port.A.motor                                                                                    #
-legL = hub.port.E.motor                                                                                    #
-legR.mode(2)                                                                                               #
-legL.mode(2)                                                                                               #
+legR = port.A                                                                                #
+legL = port.B                                                                                #
 ############################################################################################################
 
 def sit():
     print('sitting')
     ##### INSERT your own definition of puppy "sitting" #####
-    #####                                               #####
-    #####                                               #####
+    #####                                            #####
+    #####                                            #####
+    ##### motor.run(legR, 250)
+    ##### motor.run(legL, -250)
     #########################################################
+    
 def stand():
     print('standing')
     ##### INSERT your own definition of puppy "standing" #####
     #####                                                #####
     #####                                                #####
+    ##### motor.run(legR, -250)
+    ##### motor.run(legL, 250)
     ##########################################################
-   
-# Puppy starts standing 
+    
+# Puppy starts standing
 state = "standing"
 
 ## Uncomment the following line if you have loaded the code onto the SPIKE##
@@ -39,7 +40,7 @@ training = PuppyTraining()
 # Start a training session with the puppy
 # Push the "left" button to record an example of command A
 # Push the "right" button to record an example of command B
-# Push the "center" button to stop the training session
+# Push the force sensor to stop the training session
 # In this example, command A is for sitting,and command B is for standing
 training.watch()
 
@@ -51,13 +52,13 @@ utime.sleep_ms(10)
 training.report()
 utime.sleep(0.5)
 
-while not hub.button.center.is_pressed():
+while not force_sensor.pressed(port.D):
     utime.sleep(0.1)
-while hub.button.center.is_pressed():
+while force_sensor.pressed(port.D):
     utime.sleep(0.1)
-    
+
 # Use the trained model to have the puppy to do the commands you create!
-while not hub.button.center.is_pressed():
+while not force_sensor.pressed(port.D):
 
     command = training.prediction()
     if command == 'A' and state == "standing":
@@ -73,5 +74,4 @@ while not hub.button.center.is_pressed():
     else:
         utime.sleep(0.1)
 
-training.forget() # exit loop and forget training when center button is pressed
-
+training.forget() # exit loop and forget training when force sensor is pressed
