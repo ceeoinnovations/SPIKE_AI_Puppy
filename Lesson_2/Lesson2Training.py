@@ -1,34 +1,45 @@
-# Last modified: July 7 '21
+# Last modified: January 1, 2024
 # PetTraining Supervised (K-Nearest Neighbors)
 # PetTrainingSupervised is an AI module which provides PetTrainingKNN, a class for an EV3 running micropython.
 
-import hub,utime
+
+import force_sensor
+import hub, utime
+from hub import port, button
+
 
 class PetTrainingKNN:
     # PetTrainingKNN uses a 1-dimenional K-Nearest Neighbor algorithm for training
     # a robot to detect two different lengths of button presses corresponding to a
     # "pat" and "stroke" for a puppy reacting to different pet lengths
-    
+
+
     def __init__(self, train_num):
         # Initialize the touch sensor, and timer
         # Train_num is number of training strokes and pats
-        self.touch = hub.port.F.device      ##### <----------- REPLACE WITH YOUR FORCE SENSOR HUB PORT ######
-        self.pats = [0]*train_num 
+        self.touch = port.F    ##### <----------- REPLACE WITH YOUR FORCE SENSOR HUB PORT ######
+        self.pats = [0]*train_num
         self.strokes = [0]*train_num
-        
+
+
     def button_timer(self):
         # Record and measure the length of the next button press
-        while not self.touch.get()[0]>0:
+       
+        #Check to see if user wishes to prematurely end training
+        while not force_sensor.force(self.touch) > 0:
             utime.sleep(0.01)
-            if hub.button.center.is_pressed():
+            if button.pressed(button.LEFT):
                 return "END"
-        start_time = utime.time()
-        while self.touch.get()[0]>0:
+       
+        #If they press the button, measure the length in milliseconds
+        time = 0
+        while force_sensor.force(self.touch) > 0:
             utime.sleep(0.001)
-        end_time = utime.time()
-        time = end_time - start_time
+            time += 1 #measure press in ms for more accuracy
+        #print(time)
         return time
-    
+
+
     def record_examples(self, num, ptype):
         # Record num examples and store them in the example array matching the ptype
         print('** TRAIN %ss **' % (ptype))
@@ -43,11 +54,13 @@ class PetTrainingKNN:
                 break
             else:
                 array[i] = btime
-                
+
+
     def distance(self, a, b):
         # Calculate the one dimensional distance between point a and point b
         return abs(a - b)
-    
+
+
     def k_nearest_neighbor_prediction(self, sample, k):
         # Predict the class of the provided sample using the classes of K trained cases
         distances = [(0, 0)]*(len(self.pats)+len(self.strokes))
@@ -66,10 +79,12 @@ class PetTrainingKNN:
             return "pat"
         else:
             return "stroke"
-        
+
+
     def report(self):
         # Create a print report of training data
-        
+
+
         # Find pat and stroke means
         sumpats = sum(self.pats)
         sumstrokes = sum(self.strokes)
@@ -77,7 +92,8 @@ class PetTrainingKNN:
         numstrokes = len(self.strokes)
         meanpats = round(sumpats/numpats)
         meanstrokes = round(sumstrokes/numstrokes)
-        
+
+
         # Print pat and stroke lists and means
         print("*"*20)
         print('Pats: ' + str(self.pats))
@@ -86,9 +102,9 @@ class PetTrainingKNN:
         print('Strokes: ' + str(self.strokes))
         print('Mean of %d strokes is %s' % (numstrokes, meanstrokes))
         print("*"*20)
-        
+
+
     def forget(self):
         # Clear training and model
         self.pats = [0]*train_num
         self.strokes = [0]*train_num
-        
